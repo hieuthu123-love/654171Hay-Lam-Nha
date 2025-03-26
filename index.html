@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAY Nhất </title>
+    <style>
+        /* Đặt hình nền cho toàn bộ trang */
+        body {
+            margin: 0; /* Loại bỏ margin mặc định */
+            padding: 0; /* Loại bỏ padding mặc định */
+            height: 100vh; /* Chiều cao của body chiếm 100% chiều cao màn hình */
+            background-image: url('lon.jpg'); /* Đường dẫn đến ảnh nền */
+            background-size: cover; /* Làm cho ảnh phủ toàn bộ màn hình */
+            background-position: center; /* Căn giữa ảnh nền */
+            background-attachment: fixed; /* Hình nền sẽ cố định khi cuộn trang */
+            display: flex;
+            justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+            align-items: center; /* Căn giữa nội dung theo chiều dọc */
+            color: white; /* Màu chữ trắng */
+            font-size: 30px;
+            flex-direction: column; /* Đặt nội dung theo chiều dọc */
+        }
+
+        /* Nội dung trong body */
+        .content {
+            text-align: center; /* Căn giữa văn bản */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Thêm nền bán trong suốt để chữ dễ nhìn hơn */
+            border-radius: 10px;
+            animation: moveUpDown 2s ease-in-out infinite; /* Áp dụng hiệu ứng lên xuống */
+            font-family: 'Arial', sans-serif; /* Font chữ mới */
+            font-style: italic; /* In nghiêng chữ */
+            font-size: 40px; /* Kích cỡ chữ lớn hơn */
+            color: #FF6347; /* Màu chữ đỏ tươi */
+            margin-bottom: 20px; /* Khoảng cách giữa chữ và nút */
+        }
+
+        /* Định nghĩa hiệu ứng lên xuống cho chữ */
+        @keyframes moveUpDown {
+            0% {
+                transform: translateY(0); /* Vị trí ban đầu */
+            }
+            50% {
+                transform: translateY(-10px); /* Lên trên một chút */
+            }
+            100% {
+                transform: translateY(0); /* Quay lại vị trí ban đầu */
+            }
+        }
+
+        /* Style cho nút bấm hình tròn */
+        .round-button {
+            width: 100px; /* Đường kính nút */
+            height: 100px; /* Đường kính nút */
+            background-color: #4CAF50; /* Màu nền nút */
+            border-radius: 50%; /* Làm cho nút hình tròn */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+            animation: moveUpDown 2s ease-in-out infinite; /* Áp dụng hiệu ứng lên xuống cho nút */
+        }
+
+        /* Hiệu ứng khi di chuột qua nút */
+        .round-button:hover {
+            background-color: #45a049; /* Thay đổi màu khi hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        Chào mừng bạn đến với trang web của tôi!
+    </div>
+
+    <!-- Nút bấm hình tròn -->
+    <button class="round-button" onclick="playAudio()">Play</button>
+
+    <!-- Âm thanh sẽ được phát -->
+    <audio id="audio" src="videoplayback.mp3"></audio>
+
+    <script>
+        // Hàm phát âm thanh khi nhấn nút
+        function playAudio() {
+            var audio = document.getElementById("audio");
+            audio.play();  // Phát âm thanh
+        }
+    </script>
+
+</body>
+</html>
+
+
